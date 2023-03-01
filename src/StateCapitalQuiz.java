@@ -3,7 +3,7 @@ import java.util.*;
 public class StateCapitalQuiz {
     public static void main(String[] args) {
 
-        // PART 1:
+        // --------------------------------------------------PART 1-----------------------------------------------------
 
         // Defining the 2D array of state capitals
         String[][] stateCapitals = {
@@ -23,7 +23,7 @@ public class StateCapitalQuiz {
         };
 
         // Displaying the current contents of the array
-        System.out.println("US States and their capitals: - Using 2D Array:");
+        System.out.println("\nUS States and their capitals: - Using 2D Array:");
         System.out.println("\n*************************\n");
 
         // Using a for-each loop, display the contents of the array
@@ -53,7 +53,7 @@ public class StateCapitalQuiz {
         // Using a for-each loop to prompt the user to enter the capital of each state
         for (String[] stateCapital : stateCapitals) {
             System.out.println("\nQuestion " + (questionCount++) + " of " + stateCapitals.length + ":");
-            System.out.print("\nWhat is the capital of " + stateCapital[0] + "? (type 'quit' to exit) ");
+            System.out.print("\nWhat is the capital of " + stateCapital[0] + "? (type 'quit' to exit quiz) ");
             String userAnswer = userInput.nextLine();
 
             // Checking if the user entered 'quit'
@@ -75,9 +75,8 @@ public class StateCapitalQuiz {
         System.out.println("\nYou got " + correctCount + " out of " + stateCapitals.length + " correct.\n\n");
 
 
-        // ------------------------------------------------------------------------------------------------------------
 
-        // PART 2:
+        // --------------------------------------------------PART 2-----------------------------------------------------
 
         // HASH MAP
         // Creating a HashMap to store the state capitals
@@ -94,6 +93,7 @@ public class StateCapitalQuiz {
         for (String state : stateCapitalHashMap.keySet()) {
             System.out.println(state + " - " + stateCapitalHashMap.get(state));
         }
+        System.out.println("\n*************************\n");
 
         // TREE MAP
         // Creating a TreeMap (keys are naturally ordered) to store the state capitals
@@ -110,13 +110,17 @@ public class StateCapitalQuiz {
         for (String state : stateCapitalTreeMap.keySet()) {
             System.out.println(state + " - " + stateCapitalTreeMap.get(state));
         }
+        System.out.println("\n*************************\n");
 
         Scanner userInput2 = new Scanner(System.in);
 
         while (true) {
             // Prompting the user to enter a state or quit
-            System.out.print("\nEnter a state name (or 'quit' to exit): ");
+            System.out.print("\nEnter a state name (type 'quit' to exit): ");
             String input = userInput2.nextLine();
+
+            // Capitalizing the first letter of the input
+            input = input.substring(0, 1).toUpperCase() + input.substring(1).toLowerCase();
 
             // Checking if the user wants to quit
             if (input.equalsIgnoreCase("quit")) {
