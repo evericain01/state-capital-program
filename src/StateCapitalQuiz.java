@@ -115,7 +115,6 @@ public class StateCapitalQuiz {
         }
         System.out.println("\n*************************\n");
 
-
         // Prompting the user to enter a state or quit
         Scanner userInputForTreeMap = new Scanner(System.in);
 
