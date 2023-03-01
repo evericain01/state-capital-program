@@ -1,5 +1,9 @@
 import java.util.*;
 
+/**
+ * Author: Ebrahim Vericain
+ */
+
 public class StateCapitalQuiz {
     public static void main(String[] args) {
 
@@ -75,7 +79,6 @@ public class StateCapitalQuiz {
         System.out.println("\nYou got " + correctCount + " out of " + stateCapitals.length + " correct.\n\n");
 
 
-
         // --------------------------------------------------PART 2-----------------------------------------------------
 
         // HASH MAP
@@ -88,7 +91,7 @@ public class StateCapitalQuiz {
         }
 
         // Displaying the current contents of the HashMap
-        System.out.println("Displaying state and capitals into a HashMap: - Using HashMap:");
+        System.out.println("Displaying state and capitals - Using HashMap:");
         System.out.println("\n*************************\n");
         for (String state : stateCapitalHashMap.keySet()) {
             System.out.println(state + " - " + stateCapitalHashMap.get(state));
@@ -112,18 +115,20 @@ public class StateCapitalQuiz {
         }
         System.out.println("\n*************************\n");
 
-        Scanner userInput2 = new Scanner(System.in);
+
+        // Prompting the user to enter a state or quit
+        Scanner userInputForTreeMap = new Scanner(System.in);
 
         while (true) {
-            // Prompting the user to enter a state or quit
             System.out.print("\nEnter a state name (type 'quit' to exit): ");
-            String input = userInput2.nextLine();
+            String input = userInputForTreeMap.nextLine();
 
             // Capitalizing the first letter of the input
             input = input.substring(0, 1).toUpperCase() + input.substring(1).toLowerCase();
 
             // Checking if the user wants to quit
             if (input.equalsIgnoreCase("quit")) {
+                System.out.println("\nThank you for using the program. Goodbye!");
                 break;
             }
 
@@ -135,5 +140,4 @@ public class StateCapitalQuiz {
             }
         }
     }
-
 }
